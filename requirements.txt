@@ -1,0 +1,4 @@
+fitz
+pymupdf
+openai
+PyQt5
