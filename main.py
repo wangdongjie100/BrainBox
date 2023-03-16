@@ -75,10 +75,11 @@ class MainWindow(QMainWindow):
         file_dialog = QFileDialog(self)
         file_dialog.setNameFilter("PDF files (*.pdf)")
         file_dialog.setFileMode(QFileDialog.FileMode.ExistingFiles)
-        if file_dialog.exec() == QFileDialog.AcceptMode.Accepted:
+        if file_dialog.exec() == 1:
             self.file_paths = file_dialog.selectedFiles()
             num_files_selected = len(self.file_paths)
             self.selected_files_label.setText(f"{num_files_selected} files selected.")
+        print(file_dialog.selectedFiles())
             
 
     def start_review(self):
