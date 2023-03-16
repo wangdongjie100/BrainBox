@@ -44,7 +44,7 @@ class MainWindow(QMainWindow):
 
         self.domain_label = QLabel("Research Domain:", self)
         self.domain_label.move(20, 60)
-        self.domain_label.setAlignment(Qt.AlignLeft)
+        self.domain_label.setAlignment(Qt.AlignmentFlag.AlignLeft)
         self.domain_label.resize(130, 60)
 
         self.domain_menu = QComboBox(self)
@@ -58,7 +58,7 @@ class MainWindow(QMainWindow):
 
         self.selected_files_label = QLabel("", self)
         self.selected_files_label.move(20, 140)
-        self.selected_files_label.setAlignment(Qt.AlignLeft)
+        self.selected_files_label.setAlignment(Qt.AlignmentFlag.AlignLeft)
         self.selected_files_label.resize(360, 30)
 
         self.review_btn = QPushButton("Review", self)
@@ -67,15 +67,15 @@ class MainWindow(QMainWindow):
 
         self.status_label = QLabel("", self)
         self.status_label.move(20, 220)
-        self.status_label.setAlignment(Qt.AlignCenter)
+        self.status_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.status_label.resize(360, 30)
 
 
     def select_files(self):
         file_dialog = QFileDialog(self)
         file_dialog.setNameFilter("PDF files (*.pdf)")
-        file_dialog.setFileMode(QFileDialog.ExistingFiles)
-        if file_dialog.exec_() == QFileDialog.Accepted:
+        file_dialog.setFileMode(QFileDialog.FileMode.ExistingFiles)
+        if file_dialog.exec() == QFileDialog.AcceptMode.Accepted:
             self.file_paths = file_dialog.selectedFiles()
             num_files_selected = len(self.file_paths)
             self.selected_files_label.setText(f"{num_files_selected} files selected.")
@@ -106,4 +106,4 @@ if __name__ == "__main__":
     app = QApplication([])
     window = MainWindow()
     window.show()
-    app.exec_()
+    app.exec()
