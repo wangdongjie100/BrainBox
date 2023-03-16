@@ -1,4 +1,4 @@
 fitz
 pymupdf
 openai
-PyQt5
+PyQt6

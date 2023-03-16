@@ -1,5 +1,5 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QPushButton, QLineEdit, QLabel,QComboBox
-from PyQt5.QtCore import Qt, QThread, pyqtSignal
+from PyQt6.QtWidgets import QApplication, QMainWindow, QFileDialog, QPushButton, QLineEdit, QLabel,QComboBox
+from PyQt6.QtCore import Qt, QThread, pyqtSignal
 import openai
 from pdf_parser import Paper
 from utils import review_by_chatgpt
